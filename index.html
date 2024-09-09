@@ -9,12 +9,26 @@
         </style>
     </head>
     <body>
-        <form>
-            <label for="fname">First name:</label>
-            <input type="text" id="fname" name="fname"><br><br>
-        </form>
+        <div id="test"></div>
+        <div id="instruction-contentBlock"></div>
     </body>
+    <script src="script.js"></script>
     <script>
+        $(document).on("keydown", ":input:not(textarea)", function(event) {
+            return event.key != "Enter";
+        });
+    </script>
+    <script>
+        let content = new ContentBlock
+        $(function() {
+            content.createInputs("#instruction-contentBlock")
 
+            $("#test").append(content.toString())
+        });
+
+        $(document).keypress( function () {
+            $("#test").html(content.toString())
+        })
+        
     </script>
 </html>
