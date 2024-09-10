@@ -3,32 +3,16 @@
     <head>
         <meta charset="utf-8">
         <title> Arhat Json Tool</title>
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-        <style>
-
-        </style>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     </head>
     <body>
         <div id="test"></div>
         <div id="instruction-contentBlock"></div>
+        <div>
+            <button onclick="ContentBlock.add('#instruction-contentBlock')">+</button>
+            <button onclick="ContentBlock.remove('#instruction-contentBlock')">-</button>
+        </div>
+        <script src="script.js"></script>
+        <script src="ContentBlock.js"></script>
     </body>
-    <script src="script.js"></script>
-    <script>
-        $(document).on("keydown", ":input:not(textarea)", function(event) {
-            return event.key != "Enter";
-        });
-    </script>
-    <script>
-        let content = new ContentBlock
-        $(function() {
-            content.createInputs("#instruction-contentBlock")
-
-            $("#test").append(content.toString())
-        });
-
-        $(document).keypress( function () {
-            $("#test").html(content.toString())
-        })
-        
-    </script>
 </html>
