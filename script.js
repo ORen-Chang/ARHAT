@@ -19,8 +19,8 @@ class JsonForm {
 
     createInputs(selector) {
         $(selector).append(`<form id="${this.formId}"><h3>${this.formTitle}</h3></form>`);
+        let formSelector = `#${this.formId}`;
         this.getEditableAttr().forEach((attribute) => {
-            let formSelector = `#${this.formId}`;
             $(formSelector).append(`<label for="${attribute}"> ${attribute.toUpperCase()}: </label>`);
             switch (typeof (this[attribute])) {
                 case "string":
@@ -35,7 +35,8 @@ class JsonForm {
                 default:
                     break;
             }
-        });
+        })
+        $(formSelector).append(<button onclick="ContentBlock.add('#instruction-contentBlock')">Delete</button>)
     }
 
     updateInputs() {

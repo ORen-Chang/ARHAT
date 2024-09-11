@@ -18,6 +18,8 @@ class ContentBlock extends JsonForm {
         $(selector).children().last().remove()
     }
 }
+
+// On Page Load
 $(function() {
     let selector = "#instruction-contentBlock"
     ContentBlock.add(selector)
