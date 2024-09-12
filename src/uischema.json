@@ -2,35 +2,107 @@
   "type": "VerticalLayout",
   "elements": [
     {
-      "type": "Control",
-      "scope": "#/properties/instructionBlock/properties/header"
+      "type": "VerticalLayout",
+      "elements": [
+        {
+          "type": "Control",
+          "title": "Page Header",
+          "scope": "#/properties/instructionBlock/properties/header"
+        },
+        {
+          "type": "Control",
+          "scope": "#/properties/instructionBlock/properties/contentBlocks",
+          "options": {
+            "detail": {
+              "type": "VerticalLayout",
+              "elements": [
+                {
+                  "type": "Control",
+                  "scope": "#/properties/header"
+                },
+                {
+                  "type": "Control",
+                  "scope": "#/properties/body"
+                },
+                {
+                  "type": "Control",
+                  "scope": "#/properties/image"
+                },
+                {
+                  "type": "Control",
+                  "scope": "#/properties/caption"
+                }
+              ]
+            }
+          }
+        }
+      ]
     },
     {
-      "type": "Control",
-      "scope": "#/properties/instructionBlock/properties/contentBlocks",
-      "options": {
-        "detail": {
-          "type": "VerticalLayout",
-          "elements": [
-            {
-              "type": "Control",
-              "scope": "#/properties/header"
-            },
-            {
-              "type": "Control",
-              "scope": "#/properties/body"
-            },
-            {
-              "type": "Control",
-              "scope": "#/properties/image"
-            },
-            {
-              "type": "Control",
-              "scope": "#/properties/caption"
+      "type": "VerticalLayout",
+      "elements": [
+        {
+          "type": "Control",
+          "scope": "#/properties/decisionBlocks",
+          "options": {
+            "detail": {
+              "type": "VerticalLayout",
+              "elements": [
+                {
+                  "type": "Control",
+                  "scope": "#/properties/prompt",
+                  "options": {
+                    "detail": {
+                      "type": "VerticalLayout",
+                      "elements": [
+                        {
+                          "type": "Control",
+                          "scope": "#/properties/header"
+                        },
+                        {
+                          "type": "Control",
+                          "scope": "#/properties/body"
+                        },
+                        {
+                          "type": "Control",
+                          "scope": "#/properties/image"
+                        },
+                        {
+                          "type": "Control",
+                          "scope": "#/properties/caption"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "type": "Control",
+                  "scope": "#/properties/decisions",
+                  "options": {
+                    "detail": {
+                      "type": "VerticalLayout",
+                      "elements": [
+                        {
+                          "type": "Control",
+                          "scope": "#/properties/option"
+                        },
+                        {
+                          "type": "Control",
+                          "scope": "#/properties/endpoint"
+                        },
+                        {
+                          "type": "Control",
+                          "scope": "#/properties/barriers"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
             }
-          ]
+          }
         }
-      }
+      ]
     }
   ]
 }
