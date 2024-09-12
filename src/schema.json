@@ -1,0 +1,247 @@
+{
+  "type": "object",
+  "properties": {
+    "instructionBlock": {
+      "type": "object",
+      "properties": {
+        "header": {
+          "type": "string"
+        },
+        "contentBlocks": {
+          "type": "array",
+          "title": "Content Blocks",
+          "items": {
+            "type": "object",
+            "properties": {
+              "header": {
+                "type": "string"
+              },
+              "body": {
+                "type": "string"
+              },
+              "image": {
+                "type": "string"
+              },
+              "caption": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "inputBlocks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "arVideo": {
+            "type": "string"
+          },
+          "arInput": {
+            "type": "object",
+            "properties": {
+              "tool": {
+                "type": "string",
+                "enum": [
+                  "Area_2P",
+                  "Area_3P",
+                  "AreaSlope_3P",
+                  "GB_Shower",
+                  "GB_PermB",
+                  "GB_RegularB",
+                  "GB_Toilet",
+                  "HDis_2P",
+                  "HDis_3P",
+                  "Illumination",
+                  "Legroom",
+                  "MNVR_Circle",
+                  "MNVR_Kitchen",
+                  "MNVR_Sliding",
+                  "MNVR_Swing",
+                  "Slope",
+                  "Stairs",
+                  "ToiletPaper",
+                  "VDis_1S",
+                  "VDis_2P",
+                  "VDis_2S",
+                  "VDis_3P",
+                  "WalkMeasure"
+                ]
+              },
+              "header": {
+                "type": "string"
+              },
+              "instruction": {
+                "type": "string"
+              },
+              "audio": {
+                "type": "string"
+              }
+            }
+          },
+          "userInputs": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "prompt": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "header": {
+                        "type": "string"
+                      },
+                      "body": {
+                        "type": "string"
+                      },
+                      "image": {
+                        "type": "string"
+                      },
+                      "caption": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "dimension": {
+                  "type": "string",
+                  "enum": [
+                    "none",
+                    "length",
+                    "illuminance",
+                    "slope"
+                  ],
+                  "default": "length"
+                },
+                "precision": {
+                  "type": "integer",
+                  "default": 2,
+                  "minimum": 0
+                },
+                "arSync": {
+                  "type": "string",
+                  "enum": [
+                    "distance",
+                    "length",
+                    "width",
+                    "illuminance",
+                    "slope"
+                  ]
+                },
+                "threshold": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "upper": {
+                        "type": "number",
+                        "minimum": 0
+                      },
+                      "lower": {
+                        "type": "number"
+                      },
+                      "includeUpper": {
+                        "type": "boolean"
+                      },
+                      "includeLower": {
+                        "type": "boolean"
+                      },
+                      "ifTrue": {
+                        "type": "object",
+                        "properties": {
+                          "option": {
+                            "type": "string",
+                            "default": "If True"
+                          },
+                          "endpoint": {
+                            "type": "boolean"
+                          },
+                          "barriers": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      },
+                      "ifFalse": {
+                        "type": "object",
+                        "properties": {
+                          "option": {
+                            "type": "string",
+                            "default": "If False"
+                          },
+                          "endpoint": {
+                            "type": "boolean"
+                          },
+                          "barriers": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "required": ["upper", "lower"]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "decisionBlocks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "prompt": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "header": {
+                  "type": "string"
+                },
+                "body": {
+                  "type": "string"
+                },
+                "image": {
+                  "type": "string"
+                },
+                "caption": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "decisions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "option": {
+                  "type": "string"
+                },
+                "endpoint": {
+                  "type": "boolean"
+                },
+                "barriers": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": ["option", "endpoint"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
