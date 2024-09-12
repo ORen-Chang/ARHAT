@@ -1,5 +1,6 @@
 import { FC, useMemo, useState } from 'react';
 import { JsonForms } from '@jsonforms/react';
+import { createAjv } from '@jsonforms/core';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
@@ -11,6 +12,8 @@ import RatingControl from './RatingControl';
 import ratingControlTester from '../ratingControlTester';
 import schema from '../schema.json';
 import uischema from '../uischema.json';
+
+const handleDefaultsAjv = createAjv({useDefaults: true});
 
 const classes = {
   container: {
@@ -83,6 +86,7 @@ export const JsonFormsDemo: FC = () => {
             renderers={renderers}
             cells={materialCells}
             onChange={({ data }) => setData(data)}
+            ajv={handleDefaultsAjv}
           />
         </div>
       </Grid>
