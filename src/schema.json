@@ -1,0 +1,34 @@
+{
+  "type": "object",
+  "properties": {
+    "instructionBlock": {
+      "type": "object",
+      "properties": {
+        "header": {
+          "type": "string"
+        },
+        "contentBlocks": {
+          "type": "array",
+          "title": "Content Blocks",
+          "items": {
+            "type": "object",
+            "properties": {
+              "header": {
+                "type": "string"
+              },
+              "body": {
+                "type": "string"
+              },
+              "image": {
+                "type": "string"
+              },
+              "caption": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
