@@ -1,6 +1,6 @@
 import { FC, useMemo, useState } from 'react';
 import { JsonForms } from '@jsonforms/react';
-import { createAjv } from '@jsonforms/core';
+import { createAjv , Actions, NOT_APPLICABLE} from '@jsonforms/core';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
@@ -30,6 +30,7 @@ const classes = {
     borderRadius: '0.25em',
     backgroundColor: '#cecece',
     marginBottom: '1rem',
+    overflow: 'auto'
   },
   resetButton: {
     margin: 'auto !important',
@@ -87,6 +88,7 @@ export const JsonFormsDemo: FC = () => {
             cells={materialCells}
             onChange={({ data }) => setData(data)}
             ajv={handleDefaultsAjv}
+            config= {{"multi": true}}
           />
         </div>
       </Grid>

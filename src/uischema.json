@@ -3,18 +3,30 @@
   "elements": [
     {
       "type": "Control",
-      "title": "Page Header",
-      "scope": "#/properties/instructionBlock"
+      "title": "Instruction Block",
+      "scope": "#/properties/instructionBlock",
+      "options": {
+        "showSortButtons": true,
+        "multi": true
+      }
     },
     {
       "type": "Control",
       "title": "Input Block",
-      "scope": "#/properties/inputBlocks"
+      "scope": "#/properties/inputBlocks",
+      "options": {
+        "detail": "DEFAULT",
+        "showSortButtons": true
+      }
     },
     {
       "type": "Control",
       "title": "Decision Block",
-      "scope": "#/properties/decisionBlocks"
+      "scope": "#/properties/decisionBlocks",
+      "options": {
+        "detail": "DEFAULT",
+        "showSortButtons": true
+      }
     }
   ]
 }

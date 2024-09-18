@@ -10,6 +10,7 @@
     "@mui/lab": "5.0.0-alpha.170",
     "@mui/material": "^5.15.19",
     "@mui/x-date-pickers": "^6.x",
+    "gh-pages": "^6.1.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
@@ -34,6 +35,8 @@
     "vitest": "^1.6.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "dev": "vite --port 3000",
     "build": "tsc && vite build",
     "format": "prettier --write \"**/*.{ts,tsx,md,css,scss}\"",
@@ -49,5 +52,6 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "homepage": "https://oren-chang.github.io/Arhat-Json"
 }

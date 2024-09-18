@@ -1,0 +1,26 @@
+{
+  "type": "Group",
+  "label": "Content Block",
+  "elements": [
+    {
+      "type": "Control",
+      "title": "Header",
+      "scope": "#/properties/header"
+    },
+    {
+      "type": "Control",
+      "title": "Body",
+      "scope": "#/properties/body"
+    },
+    {
+      "type": "Control",
+      "title": "Image",
+      "scope": "#/properties/image"
+    },
+    {
+      "type": "Control",
+      "title": "Caption",
+      "scope": "#/properties/caption"
+    }
+  ]
+}

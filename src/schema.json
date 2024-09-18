@@ -4,7 +4,7 @@
     "instructionBlock": {
       "type": "object",
       "properties": {
-        "header": {
+        "instructionHeader": {
           "type": "string"
         },
         "contentBlocks": {
@@ -188,7 +188,8 @@
                     "required": ["upper", "lower"]
                   }
                 }
-              }
+              },
+              "required": ["precision", "dimension"]
             }
           }
         }
